@@ -4,6 +4,12 @@ export const IntroContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
+  margin: 0 1rem;
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
 `
 export const BannerText = styled.div`
   display: flex;
@@ -24,6 +30,13 @@ export const BannerText = styled.div`
     line-height: 1.3;
     color: ${(props) => props.theme['base-subtitle']};
   }
+
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+  }
 `
 
 export const QualityItemWrapper = styled.div`
@@ -31,9 +44,24 @@ export const QualityItemWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 40px;
+
+  @media (max-width: 800px) {
+    margin-top: 2.5rem;
+    flex-direction: column;
+    gap: 0;
+  }
 `
 export const BannerImage = styled.div`
   padding: 5.75rem 0;
+
+  @media (max-width: 800px) {
+    padding: 2rem 1rem;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 `
 
 export const CoffeeContainer = styled.div`

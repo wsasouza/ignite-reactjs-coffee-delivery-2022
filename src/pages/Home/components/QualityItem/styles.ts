@@ -5,6 +5,11 @@ export const QualityItemContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: ${(props) => props.theme['base-text']};
+
+  @media (max-width: 800px) {
+    margin-bottom: 0.5rem;
+  }
 `
 
 export const Circle = styled.div<{ color: string }>`
