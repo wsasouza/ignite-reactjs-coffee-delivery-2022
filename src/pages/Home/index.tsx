@@ -1,15 +1,16 @@
+import banner from '../../assets/img/banner.png'
 import { IconContext } from 'phosphor-react'
+import { QualityItem } from './components/QualityItem'
+import { ProductCard } from './components/ProductCard'
+import { qualities, products } from '../../services/data'
 import {
   BannerImage,
   BannerText,
   CoffeeContainer,
   IntroContainer,
+  ProductsContainer,
   QualityItemWrapper,
 } from './styles'
-import { qualities } from '../../services/data'
-
-import banner from '../../assets/img/banner.png'
-import { QualityItem } from './components/QualityItem'
 
 export function Home() {
   return (
@@ -47,6 +48,20 @@ export function Home() {
       </IntroContainer>
       <CoffeeContainer>
         <h2>Nossos cafés</h2>
+        <ProductsContainer>
+          {products.map((product) => {
+            return (
+              <ProductCard
+                key={product.title}
+                image={product.image}
+                tags={product.tags}
+                title={product.title}
+                subtitle={product.subtitle}
+                price={product.price}
+              />
+            )
+          })}
+        </ProductsContainer>
       </CoffeeContainer>
     </>
   )

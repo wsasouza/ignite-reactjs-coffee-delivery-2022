@@ -6,7 +6,7 @@ export const IntroContainer = styled.div`
   gap: 3rem;
   margin: 0 1rem;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
     gap: 0;
   }
@@ -70,5 +70,26 @@ export const CoffeeContainer = styled.div`
     font-weight: 800;
     font-size: 2rem;
     color: ${(props) => props.theme['base-subtitle']};
+    margin-bottom: 3rem;
+  }
+`
+
+export const ProductsContainer = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
   }
 `
