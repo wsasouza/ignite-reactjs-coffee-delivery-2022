@@ -1,4 +1,4 @@
-import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
+import { IconContext } from 'phosphor-react'
 import {
   BannerImage,
   BannerText,
@@ -6,6 +6,7 @@ import {
   IntroContainer,
   QualityItemWrapper,
 } from './styles'
+import { qualities } from '../../services/data'
 
 import banner from '../../assets/img/banner.png'
 import { QualityItem } from './components/QualityItem'
@@ -21,30 +22,23 @@ export function Home() {
             hora
           </p>
           <QualityItemWrapper>
-            <div>
-              <QualityItem
-                icon={<ShoppingCart size={16} weight="fill" />}
-                color="#c47f17"
-                text="Compra simples e segura"
-              />
-              <QualityItem
-                icon={<Timer size={16} weight="fill" />}
-                color="#dbac2c"
-                text="Entrega rápida e rastreada"
-              />
-            </div>
-            <div>
-              <QualityItem
-                icon={<Package size={16} weight="fill" />}
-                color="#574f4d"
-                text="Embalagem mantém o café intacto"
-              />
-              <QualityItem
-                icon={<Coffee size={16} weight="fill" />}
-                color="#8047f8"
-                text="O café chega fresquinho até você"
-              />
-            </div>
+            <IconContext.Provider
+              value={{
+                size: 16,
+                weight: 'fill',
+              }}
+            >
+              {qualities.map((quality, index) => {
+                return (
+                  <QualityItem
+                    key={index}
+                    icon={<quality.icon />}
+                    color={quality.color}
+                    text={quality.text}
+                  />
+                )
+              })}
+            </IconContext.Provider>
           </QualityItemWrapper>
         </BannerText>
         <BannerImage>
@@ -52,7 +46,7 @@ export function Home() {
         </BannerImage>
       </IntroContainer>
       <CoffeeContainer>
-        <h1>Coffee List</h1>
+        <h2>Nossos cafés</h2>
       </CoffeeContainer>
     </>
   )

@@ -41,14 +41,12 @@ export const BannerText = styled.div`
 
 export const QualityItemWrapper = styled.div`
   margin-top: 4.125rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 295px);
 
   @media (max-width: 800px) {
     margin-top: 2.5rem;
-    flex-direction: column;
-    gap: 0;
+    grid-template-columns: 1fr;
   }
 `
 export const BannerImage = styled.div`
@@ -65,6 +63,12 @@ export const BannerImage = styled.div`
 `
 
 export const CoffeeContainer = styled.div`
-  display: flex;
-  align-items: center;
+  margin: 2rem 1rem;
+
+  h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: ${(props) => props.theme['base-subtitle']};
+  }
 `

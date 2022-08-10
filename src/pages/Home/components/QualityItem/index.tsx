@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Circle, QualityItemContainer } from './styles'
 
-interface QualityItemProps {
+export interface QualityItemProps {
   icon: ReactNode
   color: string
   text: string
