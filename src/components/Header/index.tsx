@@ -4,9 +4,13 @@ import logo from '../../assets/img/logo-coffee-delivery.svg'
 
 import { HeaderContainer, GroupCart, Locale, Cart } from './styles'
 
-export function Header() {
+interface HeaderProps {
+  scroll: boolean
+}
+
+export function Header({ scroll }: HeaderProps) {
   return (
-    <HeaderContainer>
+    <HeaderContainer scroll={scroll}>
       <nav>
         <NavLink to="/" title="Home">
           <img src={logo} alt="logotipo coffee delivery" />

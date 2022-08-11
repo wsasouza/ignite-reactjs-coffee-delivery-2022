@@ -8,13 +8,14 @@ import {
   BannerText,
   CoffeeContainer,
   IntroContainer,
+  HomeContainer,
   ProductsContainer,
   QualityItemWrapper,
 } from './styles'
 
 export function Home() {
   return (
-    <>
+    <HomeContainer>
       <IntroContainer>
         <BannerText>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
@@ -63,6 +64,6 @@ export function Home() {
           })}
         </ProductsContainer>
       </CoffeeContainer>
-    </>
+    </HomeContainer>
   )
 }

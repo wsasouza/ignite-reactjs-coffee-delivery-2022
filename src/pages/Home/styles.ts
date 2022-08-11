@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 
+export const HomeContainer = styled.main`
+  max-width: 70rem;
+  margin: 0 auto;
+`
+
 export const IntroContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
-  margin: 0 1rem;
+  margin: 8rem 1rem 1rem 1rem;
 
   @media (max-width: 1000px) {
     flex-direction: column-reverse;
