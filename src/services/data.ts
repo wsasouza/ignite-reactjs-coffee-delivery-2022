@@ -19,21 +19,25 @@ import Coffee14 from '../assets/img/products/coffee14.png'
 
 export const qualities = [
   {
+    id: 'quality01',
     icon: ShoppingCart,
     color: '#c47f17',
     text: 'Compra simples e segura',
   },
   {
+    id: 'quality02',
     icon: Package,
     color: '#574f4d',
     text: 'Embalagem mantém o café intacto',
   },
   {
+    id: 'quality03',
     icon: Timer,
     color: '#dbac2c',
     text: 'Entrega rápida e rastreada',
   },
   {
+    id: 'quality04',
     icon: Coffee,
     color: '#8047f8',
     text: 'O café chega fresquinho até você',
@@ -42,6 +46,7 @@ export const qualities = [
 
 export const products = [
   {
+    id: 'coffee01',
     image: Coffee01,
     tags: ['tradicional'],
     title: 'Expresso Tradicional',
@@ -49,6 +54,7 @@ export const products = [
     price: 4.9,
   },
   {
+    id: 'coffee02',
     image: Coffee02,
     tags: ['tradicional'],
     title: 'Expresso Americano',
@@ -56,6 +62,7 @@ export const products = [
     price: 4.9,
   },
   {
+    id: 'coffee03',
     image: Coffee03,
     tags: ['tradicional'],
     title: 'Expresso Cremoso',
@@ -63,6 +70,7 @@ export const products = [
     price: 4.9,
   },
   {
+    id: 'coffee04',
     image: Coffee04,
     tags: ['tradicional', 'gelado'],
     title: 'Expresso Gelado',
@@ -70,6 +78,7 @@ export const products = [
     price: 4.9,
   },
   {
+    id: 'coffee05',
     image: Coffee05,
     tags: ['tradicional', 'com leite'],
     title: 'Café com Leite',
@@ -77,6 +86,7 @@ export const products = [
     price: 5.9,
   },
   {
+    id: 'coffee06',
     image: Coffee06,
     tags: ['tradicional', 'com leite'],
     title: 'Latte',
@@ -84,6 +94,7 @@ export const products = [
     price: 5.9,
   },
   {
+    id: 'coffee07',
     image: Coffee07,
     tags: ['tradicional', 'com leite'],
     title: 'Capuccino',
@@ -91,6 +102,7 @@ export const products = [
     price: 5.9,
   },
   {
+    id: 'coffee08',
     image: Coffee08,
     tags: ['tradicional', 'com leite'],
     title: 'Macchiato',
@@ -98,6 +110,7 @@ export const products = [
     price: 5.9,
   },
   {
+    id: 'coffee09',
     image: Coffee09,
     tags: ['tradicional', 'com leite'],
     title: 'Mocaccino',
@@ -105,6 +118,7 @@ export const products = [
     price: 6.9,
   },
   {
+    id: 'coffee10',
     image: Coffee10,
     tags: ['especial', 'com leite'],
     title: 'Chocolate Quente',
@@ -112,6 +126,7 @@ export const products = [
     price: 7.9,
   },
   {
+    id: 'coffee11',
     image: Coffee11,
     tags: ['especial', 'alcoólico', 'gelado'],
     title: 'Cubano',
@@ -119,6 +134,7 @@ export const products = [
     price: 9.9,
   },
   {
+    id: 'coffee12',
     image: Coffee12,
     tags: ['especial'],
     title: 'Havaiano',
@@ -126,6 +142,7 @@ export const products = [
     price: 9.9,
   },
   {
+    id: 'coffee13',
     image: Coffee13,
     tags: ['especial'],
     title: 'Árabe',
@@ -133,6 +150,7 @@ export const products = [
     price: 9.9,
   },
   {
+    id: 'coffee14',
     image: Coffee14,
     tags: ['especial', 'alcoólico'],
     title: 'Irlandês',

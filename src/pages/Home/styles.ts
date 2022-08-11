@@ -64,6 +64,7 @@ export const BannerImage = styled.div`
 
 export const CoffeeContainer = styled.div`
   margin: 2rem 1rem;
+  display: grid;
 
   h2 {
     font-family: 'Baloo 2', sans-serif;
@@ -76,7 +77,6 @@ export const CoffeeContainer = styled.div`
 
 export const ProductsContainer = styled.div`
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 
@@ -89,7 +89,7 @@ export const ProductsContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-self: center;
   }
 `

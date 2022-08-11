@@ -29,10 +29,10 @@ export function Home() {
                 weight: 'fill',
               }}
             >
-              {qualities.map((quality, index) => {
+              {qualities.map((quality) => {
                 return (
                   <QualityItem
-                    key={index}
+                    key={quality.id}
                     icon={<quality.icon />}
                     color={quality.color}
                     text={quality.text}
@@ -52,7 +52,7 @@ export function Home() {
           {products.map((product) => {
             return (
               <ProductCard
-                key={product.title}
+                key={product.id}
                 image={product.image}
                 tags={product.tags}
                 title={product.title}

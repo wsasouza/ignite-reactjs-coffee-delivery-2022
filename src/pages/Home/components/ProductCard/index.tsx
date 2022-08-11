@@ -1,5 +1,6 @@
+import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 import { Tag } from '../Tag'
-import { ProductCardContainer, TagWrapper } from './styles'
+import { PriceActionWrapper, ProductCardContainer, TagWrapper } from './styles'
 
 interface ProductCardProps {
   image: string
@@ -10,6 +11,14 @@ interface ProductCardProps {
 }
 
 export function ProductCard(product: ProductCardProps) {
+  const priceFormatted = product.price
+    .toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    })
+    .trim()
+    .replace('R$', '')
+
   return (
     <ProductCardContainer>
       <img src={product.image} alt={product.title} />
@@ -20,7 +29,20 @@ export function ProductCard(product: ProductCardProps) {
       </TagWrapper>
       <h3>{product.title}</h3>
       <p>{product.subtitle}</p>
-      <span>R${product.price}</span>
+      <PriceActionWrapper>
+        <span>R$</span>
+        <span>{priceFormatted}</span>
+        <button>
+          <Minus size={14} />
+        </button>
+        <span>1</span>
+        <button>
+          <Plus size={14} />
+        </button>
+        <button>
+          <ShoppingCartSimple size={22} weight="fill" />
+        </button>
+      </PriceActionWrapper>
     </ProductCardContainer>
   )
 }
