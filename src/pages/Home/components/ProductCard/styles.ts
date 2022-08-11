@@ -39,28 +39,38 @@ export const PriceActionWrapper = styled.div`
   display: flex;
   align-items: center;
 
+  span {
+    color: ${(props) => props.theme['base-text']};
+  }
+
   span:first-child {
     font-size: 0.875rem;
-    color: ${(props) => props.theme['base-text']};
   }
 
   span:nth-child(2) {
     font-family: 'Baloo 2', sans-serif;
     font-size: 1.5rem;
     margin-right: 1.5rem;
-    color: ${(props) => props.theme['base-text']};
   }
 
-  button:nth-child(3) {
+  button {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
     width: 1.5rem;
     height: 2.375rem;
     background: ${(props) => props.theme['base-button']};
-    border: none;
-    border-radius: 6px 0 0 6px;
     color: ${(props) => props.theme.purple};
+    cursor: pointer;
+
+    &:hover {
+      color: ${(props) => props.theme['purple-dark']};
+    }
+  }
+
+  button:nth-child(3) {
+    border-radius: 6px 0 0 6px;
     z-index: 1;
   }
 
@@ -75,27 +85,19 @@ export const PriceActionWrapper = styled.div`
   }
 
   button:nth-child(5) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5rem;
-    height: 2.375rem;
-    background: ${(props) => props.theme['base-button']};
-    border: none;
     border-radius: 0 6px 6px 0;
-    color: ${(props) => props.theme.purple};
     margin-right: 8px;
   }
 
   button:nth-child(6) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 2.375rem;
-    height: 2.375rem;
     border-radius: 6px;
-    border: none;
     color: ${(props) => props.theme['base-card']};
-    background: ${(props) => props.theme.purple};
+    background: ${(props) => props.theme['purple-dark']};
+    transition-duration: 0.3s;
+
+    &:hover {
+      background: ${(props) => props.theme.purple};
+    }
   }
 `
