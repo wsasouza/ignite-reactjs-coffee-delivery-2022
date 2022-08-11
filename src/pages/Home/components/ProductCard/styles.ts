@@ -8,6 +8,7 @@ export const ProductCardContainer = styled.div`
   height: 19.375rem;
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px 36px;
+  transition: 0.5s;
 
   img {
     margin-top: -1.25rem;
@@ -27,6 +28,10 @@ export const ProductCardContainer = styled.div`
     line-height: 1.3;
     padding: 0 1.25rem;
     color: ${(props) => props.theme['base-label']};
+  }
+
+  &:hover {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
 `
 export const TagWrapper = styled.div`
