@@ -1,16 +1,16 @@
 import { MapPinLine } from 'phosphor-react'
-import { ClientFormContainer } from './styles'
+import { AddressContainer, AddressData } from './styles'
 
-export function ClientForm() {
+export function DeliveryAddress() {
   return (
-    <ClientFormContainer>
+    <AddressContainer>
       <div>
         <h2>
           <MapPinLine size={22} color="#c47f17" /> Endereço de Entrega
         </h2>
         <span>Informe o endereço onde deseja receber o seu pedido</span>
       </div>
-      <form>
+      <AddressData>
         <input type="text" id="cep" placeholder="CEP" />
 
         <input type="text" id="street" placeholder="Rua" />
@@ -24,7 +24,7 @@ export function ClientForm() {
         <input type="text" id="city" placeholder="Cidade" />
 
         <input type="text" id="state" placeholder="UF" />
-      </form>
-    </ClientFormContainer>
+      </AddressData>
+    </AddressContainer>
   )
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ClientFormContainer = styled.div`
+export const AddressContainer = styled.div`
   margin-top: 1rem;
   padding: 2.5rem;
   background: ${(props) => props.theme['base-card']};
@@ -24,23 +24,31 @@ export const ClientFormContainer = styled.div`
     color: ${(props) => props.theme['base-text']};
   }
 
-  form {
-    display: grid;
-    grid-template-columns: 12.5rem auto 3.75rem;
-    gap: 0.75rem;
-    margin-top: 2rem;
+  @media (max-width: 580px) {
+    padding: 1.5rem;
 
-    #cep {
-      grid-column: 1;
+    span {
+      display: flex;
+      align-items: center;
     }
+  }
+`
+export const AddressData = styled.div`
+  display: grid;
+  grid-template-columns: 12.5rem auto 3.75rem;
+  gap: 0.75rem;
+  margin-top: 2rem;
 
-    #street {
-      grid-column: 1/-1;
-    }
+  #cep {
+    grid-column: 1;
+  }
 
-    #complement {
-      grid-column: 2/-1;
-    }
+  #street {
+    grid-column: 1/-1;
+  }
+
+  #complement {
+    grid-column: 2/-1;
   }
 
   input {
@@ -58,59 +66,48 @@ export const ClientFormContainer = styled.div`
   }
 
   @media (max-width: 800px) {
-    form {
-      #cep {
-        grid-column: 1;
-      }
+    #cep {
+      grid-column: 1;
+    }
 
-      #street {
-        grid-column: 1/-1;
-      }
+    #street {
+      grid-column: 1/-1;
+    }
 
-      #complement {
-        grid-column-end: span 2;
-      }
+    #complement {
+      grid-column-end: span 2;
+    }
 
-      #district {
-        grid-column: 1/-1;
-      }
+    #district {
+      grid-column: 1/-1;
+    }
 
-      #city {
-        grid-column: 1/3;
-      }
+    #city {
+      grid-column: 1/3;
     }
   }
 
   @media (max-width: 580px) {
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
 
-    span {
-      display: flex;
-      align-items: center;
+    #cep {
+      grid-column: 1;
     }
 
-    form {
-      grid-template-columns: 1fr;
+    #street {
+      grid-column: 1;
+    }
 
-      #cep {
-        grid-column: 1;
-      }
+    #complement {
+      grid-column: 1;
+    }
 
-      #street {
-        grid-column: 1;
-      }
+    #district {
+      grid-column: 1;
+    }
 
-      #complement {
-        grid-column: 1;
-      }
-
-      #district {
-        grid-column: 1;
-      }
-
-      #city {
-        grid-column: 1;
-      }
+    #city {
+      grid-column: 1;
     }
   }
 `

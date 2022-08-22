@@ -21,4 +21,10 @@ export const ClientGroup = styled.div`
     font-weight: 800;
     color: ${(props) => props.theme['base-title']};
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 `
