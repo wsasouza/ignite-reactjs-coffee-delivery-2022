@@ -1,5 +1,9 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react'
-import { PaymentMethodContainer, PaymentMethodAction } from './styles'
+import {
+  PaymentMethodButton,
+  PaymentMethodContainer,
+  PaymentMethodType,
+} from './styles'
 
 export function PaymentMethod() {
   return (
@@ -11,25 +15,22 @@ export function PaymentMethod() {
       <span>
         O pagamento é feito na entrega. Escolha a forma que deseja pagar
       </span>
-      <PaymentMethodAction>
-        <input type="radio" name="credit" value="credito" id="credit" />
-        <label htmlFor="credit">
+      <PaymentMethodType>
+        <PaymentMethodButton value="credit">
           <CreditCard size={16} color="#8047f8" />
           Cartão de Crédito
-        </label>
+        </PaymentMethodButton>
 
-        <input type="radio" name="debit" value="debito" id="debit" />
-        <label htmlFor="debit">
+        <PaymentMethodButton value="debit">
           <Bank size={16} color="#8047f8" />
           Cartão de Débito
-        </label>
+        </PaymentMethodButton>
 
-        <input type="radio" name="money" value="dinheiro" id="money" />
-        <label htmlFor="money">
+        <PaymentMethodButton value="money">
           <Money size={16} color="#8047f8" />
           Dinheiro
-        </label>
-      </PaymentMethodAction>
+        </PaymentMethodButton>
+      </PaymentMethodType>
     </PaymentMethodContainer>
   )
 }
