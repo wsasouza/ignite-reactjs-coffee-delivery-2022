@@ -28,6 +28,7 @@ export const PaymentMethodContainer = styled.div`
 export const PaymentMethodType = styled(RadioGroup.Root)`
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
 `
 
@@ -53,6 +54,10 @@ export const PaymentMethodButton = styled(RadioGroup.Item)`
 
   &[data-state='checked'] {
     background: ${(props) => props.theme['purple-light']};
-    border: 2px solid ${(props) => props.theme.purple};
+    border: 1px solid ${(props) => props.theme.purple};
+  }
+
+  :focus {
+    box-shadow: 0 0 0 1px ${(props) => props.theme.purple};
   }
 `
