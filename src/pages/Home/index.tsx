@@ -1,8 +1,12 @@
-import banner from '../../assets/img/banner.png'
+import { useContextSelector } from 'use-context-selector'
 import { IconContext } from 'phosphor-react'
+
+import banner from '../../assets/img/banner.png'
 import { QualityItem } from './components/QualityItem'
 import { ProductCard } from './components/ProductCard'
-import { qualities, products } from '../../services/data'
+import { qualities } from '../../utils/qualities'
+import { ProductsContext } from '../../contexts/ProductsContext'
+
 import {
   BannerImage,
   BannerText,
@@ -14,6 +18,10 @@ import {
 } from './styles'
 
 export function Home() {
+  const products = useContextSelector(ProductsContext, (context) => {
+    return context.products
+  })
+
   return (
     <HomeContainer>
       <IntroContainer>
