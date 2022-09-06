@@ -4,7 +4,7 @@ export const ProductCardContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 16rem;
+  min-width: 16rem;
   height: 19.375rem;
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px 36px;

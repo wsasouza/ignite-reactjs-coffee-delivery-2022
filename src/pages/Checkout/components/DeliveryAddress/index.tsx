@@ -1,11 +1,10 @@
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-import { MapPinLine } from 'phosphor-react'
+// import { useForm } from 'react-hook-form'
+// import { yupResolver } from '@hookform/resolvers/yup'
+// import * as yup from 'yup'
+import { MagnifyingGlass, MapPinLine } from 'phosphor-react'
 import { AddressContainer, AddressData } from './styles'
 
 export function DeliveryAddress() {
-  
   return (
     <AddressContainer>
       <div>
@@ -15,19 +14,23 @@ export function DeliveryAddress() {
         <span>Informe o endereço onde deseja receber o seu pedido</span>
       </div>
       <AddressData>
-        <input type="text" id="cep" placeholder="CEP" />
+        <input type="text" placeholder="CEP" className="cep" />
 
-        <input type="text" id="street" placeholder="Rua" />
+        <button className="search">
+          <MagnifyingGlass size={20} />
+        </button>
 
-        <input type="text" id="number" placeholder="Número" />
+        <input type="text" className="street" placeholder="Rua" />
 
-        <input type="text" id="complement" placeholder="Complemento" />
+        <input type="text" className="number" placeholder="Número" />
 
-        <input type="text" id="district" placeholder="Bairro" />
+        <input type="text" className="complement" placeholder="Complemento" />
 
-        <input type="text" id="city" placeholder="Cidade" />
+        <input type="text" className="district" placeholder="Bairro" />
 
-        <input type="text" id="state" placeholder="UF" />
+        <input type="text" className="city" placeholder="Cidade" />
+
+        <input type="text" className="state" placeholder="UF" />
       </AddressData>
     </AddressContainer>
   )
