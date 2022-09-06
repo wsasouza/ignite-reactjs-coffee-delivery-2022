@@ -1,4 +1,11 @@
 import styled from 'styled-components'
+import * as RadioGroup from '@radix-ui/react-radio-group'
+
+export const DeliveryClientContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`
 
 export const AddressContainer = styled.div`
   margin-top: 1rem;
@@ -9,9 +16,9 @@ export const AddressContainer = styled.div`
 
   h2 {
     display: flex;
-    align-items: center;
-    gap: 8px;
     font-size: 1rem;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 400;
     line-height: 1.3;
     color: ${(props) => props.theme['base-subtitle']};
@@ -34,12 +41,13 @@ export const AddressContainer = styled.div`
   }
 `
 export const AddressData = styled.div`
-  width: 100%;
+  min-width: 100%;
+  background: blue;
   display: grid;
-  grid-template-columns: 35% 11% 38% 11%;
-  grid-template-rows: repeat(4, auto);
+  grid-template-columns: 35% 11% 38.7% 11%;
+  grid-template-rows: repeat(auto-fit, 4, auto);
   grid-template-areas:
-    'cep search empty empty'
+    'cep search . .'
     'street street street street'
     'number complement complement complement'
     'district city city state';
@@ -117,5 +125,66 @@ export const AddressData = styled.div`
       'number complement complement complement'
       'district district district district'
       'city city city state';
+  }
+`
+
+export const PaymentMethodContainer = styled.div`
+  padding: 2.5rem;
+  background: ${(props) => props.theme['base-card']};
+  border-radius: 6px;
+  max-width: 40rem;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  span {
+    margin-left: 1.875rem;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    color: ${(props) => props.theme['base-text']};
+  }
+`
+
+export const PaymentMethodType = styled(RadioGroup.Root)`
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+`
+
+export const PaymentMethodButton = styled(RadioGroup.Item)`
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 0.75rem;
+  padding: 1rem;
+  font-size: 0.75rem;
+  background: ${(props) => props.theme['base-button']};
+  color: ${(props) => props.theme['base-text']};
+  border-radius: 6px;
+  border: 0;
+  min-width: 11.125rem;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &[data-state='unchecked']:hover {
+    background: ${(props) => props.theme['base-hover']};
+    color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  &[data-state='checked'] {
+    background: ${(props) => props.theme['purple-light']};
+    border: 1px solid ${(props) => props.theme.purple};
+  }
+
+  :focus {
+    box-shadow: 0 0 0 1px ${(props) => props.theme.purple};
   }
 `

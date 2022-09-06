@@ -1,4 +1,5 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
+import { priceFormatter } from '../../../../utils/formatter'
 import {
   CartItemContainer,
   Price,
@@ -8,18 +9,24 @@ import {
   QuantityItemAction,
 } from './styles'
 
-export function CartItem() {
+interface CartItemProps {
+  image: string
+  title: string
+  price: number
+}
+
+export function CartItem(data: CartItemProps) {
   return (
     <CartItemContainer>
       <ProductItemContainer>
         <img
-          src="https://i.ibb.co/tbJj98t/coffee01.png"
-          alt="coffee01"
+          src={data.image}
+          alt={`Imagem do café ${data.title}`}
           width={64}
           height={64}
         />
         <ProductItemWrapper>
-          <span>Expresso Tradicional</span>
+          <span>{data.title}</span>
           <ProductItemAction>
             <QuantityItemAction>
               <button>
@@ -37,7 +44,7 @@ export function CartItem() {
           </ProductItemAction>
         </ProductItemWrapper>
       </ProductItemContainer>
-      <Price>R$ 9,90</Price>
+      <Price>{priceFormatter.format(data.price)}</Price>
     </CartItemContainer>
   )
 }

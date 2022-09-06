@@ -1,22 +1,23 @@
 import styled from 'styled-components'
 
 export const CheckoutContainer = styled.div`
-  max-width: 70rem;
-  margin: 0 auto;
-  width: 100%;
-  margin-top: 7rem;
+  margin: 7rem auto 2rem auto;
   padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 70rem;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 
   h1 {
     font-family: 'Baloo 2', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     color: ${(props) => props.theme['base-title']};
-  }
-
-  form {
-    display: grid;
-    grid-template-columns: 1fr auto;
   }
 `
 

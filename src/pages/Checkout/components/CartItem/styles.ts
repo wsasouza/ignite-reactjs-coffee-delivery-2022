@@ -3,8 +3,13 @@ import styled from 'styled-components'
 export const CartItemContainer = styled.div`
   display: flex;
   background: ${(props) => props.theme['base-card']};
-  padding: 0.5rem 0.25rem;
+  padding: 1.5rem 0.25rem 1.5rem 0.25rem;
+  border-bottom: 1px solid ${(props) => props.theme['base-button']};
   gap: 3.125rem;
+
+  @media (max-width: 440px) {
+    gap: 1rem;
+  }
 `
 
 export const Price = styled.span`
@@ -16,6 +21,10 @@ export const ProductItemContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1.25rem;
+
+  @media (max-width: 440px) {
+    gap: 0.25rem;
+  }
 `
 
 export const ProductItemWrapper = styled.div`
