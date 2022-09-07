@@ -35,17 +35,17 @@ export function DeliveryClient() {
             <MagnifyingGlass size={20} />
           </button>
 
-          <input type="text" className="street" placeholder="Rua" />
+          <input type="text" placeholder="Rua" className="street" />
 
-          <input type="text" className="number" placeholder="Número" />
+          <input type="text" placeholder="Número" className="number" />
 
-          <input type="text" className="complement" placeholder="Complemento" />
+          <input type="text" placeholder="Complemento" className="complement" />
 
-          <input type="text" className="district" placeholder="Bairro" />
+          <input type="text" placeholder="Bairro" className="district" />
 
-          <input type="text" className="city" placeholder="Cidade" />
+          <input type="text" placeholder="Cidade" className="city" />
 
-          <input type="text" className="state" placeholder="UF" />
+          <input type="text" placeholder="UF" className="state" />
         </AddressData>
       </AddressContainer>
       <PaymentMethodContainer>

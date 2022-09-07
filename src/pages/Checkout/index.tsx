@@ -1,6 +1,6 @@
 import { Cart } from './components/Cart'
 import { DeliveryClient } from './components/DeliveryClient'
-import { PaymentMethod } from './components/PaymentMethod'
+// import { PaymentMethod } from './components/PaymentMethod'
 import { CartGroup, CheckoutContainer, ClientGroup } from './styles'
 
 export function Checkout() {

@@ -3,6 +3,7 @@ import * as RadioGroup from '@radix-ui/react-radio-group'
 
 export const DeliveryClientContainer = styled.div`
   display: flex;
+  max-width: 40rem;
   flex-direction: column;
   gap: 0.75rem;
 `
@@ -12,7 +13,8 @@ export const AddressContainer = styled.div`
   padding: 2.5rem;
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px;
-  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
 
   h2 {
     display: flex;
@@ -39,38 +41,39 @@ export const AddressContainer = styled.div`
       align-items: center;
     }
   }
+
+  @media (max-width: 495px) {
+    padding: 1.5rem 0.75rem;
+  }
 `
 export const AddressData = styled.div`
-  min-width: 100%;
-  background: blue;
   display: grid;
-  grid-template-columns: 35% 11% 38.7% 11%;
-  grid-template-rows: repeat(auto-fit, 4, auto);
-  grid-template-areas:
-    'cep search . .'
-    'street street street street'
-    'number complement complement complement'
-    'district city city state';
+  grid-template-columns: 200px auto 60px;
+  grid-template-rows: auto;
   gap: 0.75rem;
   margin-top: 2rem;
 
   .cep {
-    grid-area: cep;
+    grid-column: 1/2;
+    grid-row: 1;
   }
 
   .search {
-    grid-area: search;
+    grid-column: 2/3;
+    grid-row: 1;
     border: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 2.5rem;
     border-radius: 6px;
-    background: ${(props) => props.theme['base-input']};
+    background: ${(props) => props.theme['base-button']};
     color: ${(props) => props.theme.purple};
     cursor: pointer;
 
     &:hover {
-      background: ${(props) => props.theme['purple-light']};
+      background: ${(props) => props.theme['base-hover']};
+      transition: 0.5s;
     }
 
     &:focus {
@@ -79,27 +82,33 @@ export const AddressData = styled.div`
   }
 
   .street {
-    grid-area: street;
+    grid-column: 1/-1;
+    grid-row: 2;
   }
 
   .number {
-    grid-area: number;
+    grid-column: 1/2;
+    grid-row: 3;
   }
 
   .complement {
-    grid-area: complement;
+    grid-column: 2/-1;
+    grid-row: 3;
   }
 
   .district {
-    grid-area: district;
+    grid-column: 1/2;
+    grid-row: 4;
   }
 
   .city {
-    grid-area: city;
+    grid-column: 2/3;
+    grid-row: 4;
   }
 
   .state {
-    grid-area: state;
+    grid-column: 3;
+    grid-row: 4;
   }
 
   input {
@@ -116,15 +125,50 @@ export const AddressData = styled.div`
     color: ${(props) => props.theme['base-label']};
   }
 
-  @media (max-width: 600px) {
-    grid-template-columns: 35% 11% 25% 18%;
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas:
-      'cep cep cep search'
-      'street street street street'
-      'number complement complement complement'
-      'district district district district'
-      'city city city state';
+  @media (max-width: 580px) {
+    .district {
+      grid-column: 1/-1;
+      grid-row: 4;
+    }
+
+    .city {
+      grid-column: 1/3;
+      grid-row: 5;
+    }
+
+    .state {
+      grid-column: 3;
+      grid-row: 5;
+    }
+  }
+
+  @media (max-width: 495px) {
+    grid-template-columns: auto auto 45px;
+
+    .number {
+      grid-column: 1/-1;
+      grid-row: 3;
+    }
+
+    .complement {
+      grid-column: 1/-1;
+      grid-row: 4;
+    }
+
+    .district {
+      grid-column: 1/-1;
+      grid-row: 5;
+    }
+
+    .city {
+      grid-column: 1/3;
+      grid-row: 6;
+    }
+
+    .state {
+      grid-column: 3;
+      grid-row: 6;
+    }
   }
 `
 
@@ -132,7 +176,6 @@ export const PaymentMethodContainer = styled.div`
   padding: 2.5rem;
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px;
-  max-width: 40rem;
 
   h2 {
     display: flex;
@@ -149,6 +192,10 @@ export const PaymentMethodContainer = styled.div`
     font-size: 0.875rem;
     line-height: 1.3;
     color: ${(props) => props.theme['base-text']};
+  }
+
+  @media (max-width: 495px) {
+    padding: 1.5rem 0.75rem;
   }
 `
 
@@ -186,5 +233,9 @@ export const PaymentMethodButton = styled(RadioGroup.Item)`
 
   :focus {
     box-shadow: 0 0 0 1px ${(props) => props.theme.purple};
+  }
+
+  @media (max-width: 495px) {
+    width: 100%;
   }
 `

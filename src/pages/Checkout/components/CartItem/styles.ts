@@ -8,7 +8,7 @@ export const CartItemContainer = styled.div`
   gap: 3.125rem;
 
   @media (max-width: 440px) {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 `
 
