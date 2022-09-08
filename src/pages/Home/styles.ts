@@ -9,7 +9,7 @@ export const IntroContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
-  margin: 8rem 1rem 1rem 1rem;
+  margin: 7rem 1rem 1rem 1rem;
 
   @media (max-width: 1000px) {
     flex-direction: column-reverse;

@@ -125,6 +125,11 @@ export const AddressData = styled.div`
     color: ${(props) => props.theme['base-label']};
   }
 
+  input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
+  }
+
   @media (max-width: 580px) {
     .district {
       grid-column: 1/-1;

@@ -26,7 +26,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
   const [products, setProducts] = useState<Product[]>([])
 
   const fetchProducts = useCallback(async () => {
-    const response = await api.get('products')
+    const response = await api.get('coffees')
 
     setProducts(response.data)
   }, [])
