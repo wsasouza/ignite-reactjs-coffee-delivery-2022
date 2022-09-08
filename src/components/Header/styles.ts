@@ -16,7 +16,6 @@ export const HeaderContainer = styled.header<{ scroll: boolean }>`
     max-width: 70rem;
     margin: 0 auto;
     justify-content: space-between;
-    background: green;
   }
 `
 const scrollStyle = css`
