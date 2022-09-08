@@ -180,7 +180,7 @@ export const AddressData = styled.div`
 export const PaymentMethodContainer = styled.div`
   padding: 2.5rem;
   background: ${(props) => props.theme['base-card']};
-  border-radius: 6px 6px 36px 6px;
+  border-radius: 6px 6px 6px 36px;
 
   h2 {
     display: flex;
