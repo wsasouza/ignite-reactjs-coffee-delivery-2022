@@ -1,7 +1,65 @@
 {
-  "coffees": [
+  "stock": [
     {
-      "id": "coffee01",
+      "id": 1,
+      "amount": 30
+    },
+    {
+      "id": 2,
+      "amount": 25
+    },
+    {
+      "id": 3,
+      "amount": 25
+    },
+    {
+      "id": 4,
+      "amount": 15
+    },
+    {
+      "id": 5,
+      "amount": 30
+    },
+    {
+      "id": 6,
+      "amount": 30
+    },
+    {
+      "id": 7,
+      "amount": 30
+    },
+    {
+      "id": 8,
+      "amount": 10
+    },
+    {
+      "id": 9,
+      "amount": 20
+    },
+    {
+      "id": 10,
+      "amount": 15
+    },
+    {
+      "id": 11,
+      "amount": 4
+    },
+    {
+      "id": 12,
+      "amount": 4
+    },
+    {
+      "id": 13,
+      "amount": 4
+    },
+    {
+      "id": 14,
+      "amount": 5
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
       "image": "https://i.ibb.co/tbJj98t/coffee01.png",
       "tags": ["tradicional"],
       "title": "Expresso Tradicional",
@@ -9,7 +67,7 @@
       "price": 4.9
     },
     {
-      "id": "coffee02",
+      "id": 2,
       "image": "https://i.ibb.co/vVc5tsp/coffee02.png",
       "tags": ["tradicional"],
       "title": "Expresso Americano",
@@ -17,7 +75,7 @@
       "price": 4.9
     },
     {
-      "id": "coffee03",
+      "id": 3,
       "image": "https://i.ibb.co/mRNxmJ5/coffee03.png",
       "tags": ["tradicional"],
       "title": "Expresso Cremoso",
@@ -25,7 +83,7 @@
       "price": 4.9
     },
     {
-      "id": "coffee04",
+      "id": 4,
       "image": "https://i.ibb.co/yhv28L0/coffee04.png",
       "tags": ["tradicional", "gelado"],
       "title": "Expresso Gelado",
@@ -33,7 +91,7 @@
       "price": 4.9
     },
     {
-      "id": "coffee05",
+      "id": 5,
       "image": "https://i.ibb.co/RHSJqtN/coffee05.png",
       "tags": ["tradicional", "com leite"],
       "title": "Café com Leite",
@@ -41,7 +99,7 @@
       "price": 5.9
     },
     {
-      "id": "coffee06",
+      "id": 6,
       "image": "https://i.ibb.co/KDNWHCv/coffee06.png",
       "tags": ["tradicional", "com leite"],
       "title": "Latte",
@@ -49,7 +107,7 @@
       "price": 5.9
     },
     {
-      "id": "coffee07",
+      "id": 7,
       "image": "https://i.ibb.co/HHcVyMZ/coffee07.png",
       "tags": ["tradicional", "com leite"],
       "title": "Capuccino",
@@ -57,7 +115,7 @@
       "price": 5.9
     },
     {
-      "id": "coffee08",
+      "id": 8,
       "image": "https://i.ibb.co/P5vyLh4/coffee08.png",
       "tags": ["tradicional", "com leite"],
       "title": "Macchiato",
@@ -65,7 +123,7 @@
       "price": 5.9
     },
     {
-      "id": "coffee09",
+      "id": 9,
       "image": "https://i.ibb.co/DG525vJ/coffee09.png",
       "tags": ["tradicional", "com leite"],
       "title": "Mocaccino",
@@ -73,7 +131,7 @@
       "price": 6.9
     },
     {
-      "id": "coffee10",
+      "id": 10,
       "image": "https://i.ibb.co/B30jg8V/coffee10.png",
       "tags": ["especial", "com leite"],
       "title": "Chocolate Quente",
@@ -81,7 +139,7 @@
       "price": 7.9
     },
     {
-      "id": "coffee11",
+      "id": 11,
       "image": "https://i.ibb.co/r2x1M71/coffee11.png",
       "tags": ["especial", "alcoólico", "gelado"],
       "title": "Cubano",
@@ -89,7 +147,7 @@
       "price": 9.9
     },
     {
-      "id": "coffee12",
+      "id": 12,
       "image": "https://i.ibb.co/WkBgM4t/coffee12.png",
       "tags": ["especial"],
       "title": "Havaiano",
@@ -97,7 +155,7 @@
       "price": 9.9
     },
     {
-      "id": "coffee13",
+      "id": 13,
       "image": "https://i.ibb.co/n82TMny/coffee13.png",
       "tags": ["especial"],
       "title": "Árabe",
@@ -105,7 +163,7 @@
       "price": 9.9
     },
     {
-      "id": "coffee14",
+      "id": 14,
       "image": "https://i.ibb.co/5j2fxDh/coffee14.png",
       "tags": ["especial", "alcoólico"],
       "title": "Irlandês",

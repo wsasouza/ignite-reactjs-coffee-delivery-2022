@@ -3,13 +3,14 @@ import { createContext } from 'use-context-selector'
 
 import { api } from '../lib/axios'
 
-interface Product {
-  id: string
+export interface Product {
+  id: number
   image: string
   tags: string[]
   title: string
   subtitle: string
   price: number
+  amount: number
 }
 
 interface ProductContextType {
@@ -26,7 +27,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
   const [products, setProducts] = useState<Product[]>([])
 
   const fetchProducts = useCallback(async () => {
-    const response = await api.get('coffees')
+    const response = await api.get('products')
 
     setProducts(response.data)
   }, [])

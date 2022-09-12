@@ -29,7 +29,7 @@ export const SuccessContainer = styled.div`
 
   @media (max-width: 525px) {
     img {
-      display: none;
+      width: 20rem;
     }
   }
 `
@@ -79,7 +79,7 @@ export const DataRequest = styled.div`
 
   @media (max-width: 525px) {
     margin-top: 1.5rem;
-    overflow-x: auto;
+    min-width: 20rem;
     font-size: 0.875rem;
     padding: 2.5rem 0.75rem;
   }

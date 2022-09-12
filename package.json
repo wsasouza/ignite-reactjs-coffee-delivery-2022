@@ -20,8 +20,7 @@
     "react-router-dom": "^6.3.0",
     "scheduler": "^0.23.0",
     "styled-components": "^5.3.5",
-    "use-context-selector": "^1.4.1",
-    "yup": "^0.32.11"
+    "use-context-selector": "^1.4.1"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.1.3",
