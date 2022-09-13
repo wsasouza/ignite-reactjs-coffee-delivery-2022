@@ -3,14 +3,14 @@ import { MapPin, ShoppingCart } from 'phosphor-react'
 import logo from '../../assets/img/logo-coffee-delivery.svg'
 
 import { HeaderContainer, GroupCart, Locale, Cart } from './styles'
-import { useCartQuantity } from '../../hooks/useCartQuantity'
+import { useCart } from '../../hooks/useCart'
 
 interface HeaderProps {
   scroll: boolean
 }
 
 export function Header({ scroll }: HeaderProps) {
-  const { quantityItemsCart } = useCartQuantity()
+  const { quantityItemsCart } = useCart()
 
   return (
     <HeaderContainer scroll={scroll}>

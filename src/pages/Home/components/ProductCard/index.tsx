@@ -16,7 +16,7 @@ interface ProductCardProps {
 
 export function ProductCard(product: ProductCardProps) {
   const [quantity, setQuantity] = useState(1)
-  const quantityMin = quantity === 1
+  const quantityMin = quantity <= 1
 
   const addToCart = useContextSelector(ProductsContext, (context) => {
     return context.addProduct

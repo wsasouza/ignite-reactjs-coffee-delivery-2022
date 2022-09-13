@@ -48,6 +48,7 @@ export const ResumeCart = styled.div`
     font-size: 0.875rem;
   }
 
+  .deliveryTax,
   .price {
     display: flex;
     justify-content: flex-end;

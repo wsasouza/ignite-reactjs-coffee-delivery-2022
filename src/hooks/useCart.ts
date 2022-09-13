@@ -1,7 +1,7 @@
 import { useContextSelector } from 'use-context-selector'
 import { ProductsContext } from '../contexts/ProductsContext'
 
-export function useCartQuantity() {
+export function useCart() {
   const cartItems = useContextSelector(ProductsContext, (context) => {
     return context.cart
   })

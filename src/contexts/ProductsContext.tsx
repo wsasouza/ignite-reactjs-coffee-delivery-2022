@@ -3,7 +3,7 @@ import { createContext } from 'use-context-selector'
 
 import { api } from '../lib/axios'
 
-export interface Product {
+interface Product {
   id: number
   image: string
   tags: string[]
@@ -52,8 +52,6 @@ export function ProductsProvider({ children }: ProductProviderProps) {
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts])
-
-  console.log(cart)
 
   const addProduct = async ({
     productId,

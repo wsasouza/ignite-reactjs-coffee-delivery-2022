@@ -86,8 +86,13 @@ export const QuantityItemAction = styled.div`
     color: ${(props) => props.theme.purple};
     cursor: pointer;
 
-    &:hover {
+    &:not(:disabled):hover {
+      background: ${(props) => props.theme['base-hover']};
       color: ${(props) => props.theme['purple-dark']};
+    }
+
+    &:disabled {
+      cursor: not-allowed;
     }
   }
 

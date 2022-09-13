@@ -1,5 +1,5 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
-import { priceFormatter } from '../../../../utils/formatter'
+
 import {
   CartItemContainer,
   Price,
@@ -9,13 +9,28 @@ import {
   QuantityItemAction,
 } from './styles'
 
+interface UpdateProduct {
+  id: number
+  amount: number
+}
+
 interface CartItemProps {
+  id: number
   image: string
   title: string
-  price: number
+  price: string
+  amount: number
+  increment: (product: UpdateProduct) => void
+  decrement: (product: UpdateProduct) => void
+  remove: (id: number) => void
 }
 
 export function CartItem(data: CartItemProps) {
+  const product = {
+    id: data.id,
+    amount: data.amount,
+  }
+
   return (
     <CartItemContainer>
       <ProductItemContainer>
@@ -29,22 +44,25 @@ export function CartItem(data: CartItemProps) {
           <span>{data.title}</span>
           <ProductItemAction>
             <QuantityItemAction>
-              <button>
+              <button
+                onClick={() => data.decrement(product)}
+                disabled={data.amount <= 1}
+              >
                 <Minus size={14} />
               </button>
-              <span>99</span>
-              <button>
+              <span>{data.amount}</span>
+              <button onClick={() => data.increment(product)}>
                 <Plus size={14} />
               </button>
             </QuantityItemAction>
-            <button>
+            <button onClick={() => data.remove(data.id)}>
               <Trash size={16} />
               Remover
             </button>
           </ProductItemAction>
         </ProductItemWrapper>
       </ProductItemContainer>
-      <Price>{priceFormatter.format(data.price)}</Price>
+      <Price>{data.price}</Price>
     </CartItemContainer>
   )
 }
