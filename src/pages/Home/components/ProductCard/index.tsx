@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 import { Tag } from '../Tag'
 import { PriceActionWrapper, ProductCardContainer, TagWrapper } from './styles'
+import { ProductsContext } from '../../../../contexts/ProductsContext'
+import { useContextSelector } from 'use-context-selector'
 
 interface ProductCardProps {
+  id: number
   image: string
   tags: string[]
   title: string
@@ -11,6 +15,39 @@ interface ProductCardProps {
 }
 
 export function ProductCard(product: ProductCardProps) {
+  const [quantity, setQuantity] = useState(1)
+  const quantityMin = quantity === 1
+
+  const addToCart = useContextSelector(ProductsContext, (context) => {
+    return context.addProduct
+  })
+
+  function handleAddToCart(product: ProductCardProps) {
+    addToCart({
+      productId: product.id,
+      amount: quantity,
+    })
+    setQuantity(1)
+  }
+
+  function handleQuantityIncrement() {
+    let currentQuantity = quantity
+
+    if (currentQuantity < 99) {
+      currentQuantity += 1
+      setQuantity(currentQuantity)
+    }
+  }
+
+  function handleQuantityDecrement() {
+    let currentQuantity = quantity
+
+    if (currentQuantity > 1) {
+      currentQuantity -= 1
+      setQuantity(currentQuantity)
+    }
+  }
+
   const priceFormatted = product.price
     .toLocaleString('pt-BR', {
       style: 'currency',
@@ -32,14 +69,14 @@ export function ProductCard(product: ProductCardProps) {
       <PriceActionWrapper>
         <span>R$</span>
         <span>{priceFormatted}</span>
-        <button>
+        <button disabled={quantityMin} onClick={handleQuantityDecrement}>
           <Minus size={14} />
         </button>
-        <span>1</span>
-        <button>
+        <span>{quantity}</span>
+        <button onClick={handleQuantityIncrement}>
           <Plus size={14} />
         </button>
-        <button>
+        <button onClick={() => handleAddToCart(product)}>
           <ShoppingCartSimple size={22} weight="fill" />
         </button>
       </PriceActionWrapper>

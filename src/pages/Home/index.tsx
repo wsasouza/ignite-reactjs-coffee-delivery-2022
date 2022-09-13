@@ -67,6 +67,7 @@ export function Home() {
                 title={product.title}
                 subtitle={product.subtitle}
                 price={product.price}
+                id={product.id}
               />
             )
           })}

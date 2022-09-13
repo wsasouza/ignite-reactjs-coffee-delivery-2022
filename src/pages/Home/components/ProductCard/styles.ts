@@ -69,14 +69,19 @@ export const PriceActionWrapper = styled.div`
     color: ${(props) => props.theme.purple};
     cursor: pointer;
 
-    &:hover {
+    &:not(:disabled):hover {
       color: ${(props) => props.theme['purple-dark']};
+      background: ${(props) => props.theme['base-hover']};
     }
   }
 
   button:nth-child(3) {
     border-radius: 6px 0 0 6px;
     z-index: 1;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   span:nth-child(4) {
@@ -102,6 +107,7 @@ export const PriceActionWrapper = styled.div`
     transition-duration: 0.3s;
 
     &:hover {
+      color: ${(props) => props.theme['base-card']};
       background: ${(props) => props.theme.purple};
     }
   }
