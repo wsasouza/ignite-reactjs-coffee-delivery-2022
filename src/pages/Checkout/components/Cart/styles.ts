@@ -6,7 +6,7 @@ export const CartContainer = styled.div`
   flex-direction: column;
   background: ${(props) => props.theme['base-card']};
   padding: 2rem 2.5rem 2.5rem 2.5rem;
-  border-radius: 6px 44px 6px 44px;
+  border-radius: 6px 44px 6px 6px;
 
   & > button {
     margin-top: 1.5rem;
@@ -25,6 +25,12 @@ export const CartContainer = styled.div`
 
   @media (max-width: 600px) {
     padding: 2rem 1rem;
+    border-radius: 6px 44px 6px 44px;
+
+    & > button {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
   }
 
   @media (max-width: 440px) {
@@ -58,5 +64,9 @@ export const ResumeCart = styled.div`
     font-size: 1.25rem;
     font-weight: bold;
     color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 1rem;
   }
 `

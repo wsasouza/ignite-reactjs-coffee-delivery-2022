@@ -5,7 +5,7 @@ export const CartItemContainer = styled.div`
   background: ${(props) => props.theme['base-card']};
   padding: 1.5rem 0.25rem 1.5rem 0.25rem;
   border-bottom: 1px solid ${(props) => props.theme['base-button']};
-  gap: 3.125rem;
+  justify-content: space-between;
 
   @media (max-width: 440px) {
     gap: 0.5rem;
@@ -15,6 +15,10 @@ export const CartItemContainer = styled.div`
 export const Price = styled.span`
   color: ${(props) => props.theme['base-text']};
   font-weight: bold;
+
+  @media (max-width: 440px) {
+    margin-right: 0.75rem;
+  }
 `
 
 export const ProductItemContainer = styled.div`

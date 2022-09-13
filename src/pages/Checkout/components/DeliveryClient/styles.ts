@@ -35,6 +35,7 @@ export const AddressContainer = styled.div`
 
   @media (max-width: 580px) {
     padding: 1.5rem;
+    border-radius: 6px 36px 6px 6px;
 
     span {
       display: flex;
