@@ -53,6 +53,8 @@ export function ProductsProvider({ children }: ProductProviderProps) {
     fetchProducts()
   }, [fetchProducts])
 
+  console.log(cart)
+
   const addProduct = async ({
     productId,
     amount,
@@ -81,7 +83,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
 
         const newProduct = {
           ...product.data,
-          amountCart,
+          amount: amountCart,
         }
 
         updatedCart.push(newProduct)

@@ -51,4 +51,22 @@ export const Cart = styled.span`
   color: ${(props) => props.theme['yellow-dark']};
   border-radius: 6px;
   padding: 0.5rem;
+  position: relative;
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+    color: ${(props) => props.theme.white};
+    background: ${(props) => props.theme['yellow-dark']};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
 `
