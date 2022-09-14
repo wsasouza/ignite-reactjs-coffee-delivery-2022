@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
-export const DeliveryClientContainer = styled.div`
+export const DeliveryClientContainer = styled.form`
   display: flex;
   max-width: 40rem;
   flex-direction: column;
@@ -72,13 +72,17 @@ export const AddressData = styled.div`
     color: ${(props) => props.theme.purple};
     cursor: pointer;
 
-    &:hover {
+    &:not(:disabled):hover {
       background: ${(props) => props.theme['base-hover']};
       transition: 0.5s;
     }
 
     &:focus {
       box-shadow: 0 0 0 2px ${(props) => props.theme.purple};
+    }
+
+    &:disabled {
+      cursor: not-allowed;
     }
   }
 
