@@ -1,6 +1,8 @@
-import { Controller, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
+import { useEffect, useState } from 'react'
+import { Controller, useFormContext } from 'react-hook-form'
+
+import axios from 'axios'
+
 import {
   Bank,
   CreditCard,
@@ -9,17 +11,18 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+
+import { maskCEP } from '../../../../utils/masks'
+
 import {
   AddressContainer,
   AddressData,
   DeliveryClientContainer,
+  Input,
   PaymentMethodButton,
   PaymentMethodContainer,
   PaymentMethodType,
 } from './styles'
-import axios from 'axios'
-import { maskCEP } from '../../../../utils/masks'
-import { useEffect, useState } from 'react'
 
 interface FetchAddress {
   street?: string
@@ -29,33 +32,10 @@ interface FetchAddress {
   state?: string
 }
 
-const deliveryClientFormSchema = z.object({
-  cep: z.string().min(9),
-  street: z.string().min(3),
-  number: z.string().min(1),
-  complement: z.string(),
-  district: z.string().min(1),
-  city: z.string().min(3),
-  state: z.string().min(2),
-  paymentMethod: z.enum(['credit', 'debit', 'money']),
-})
-
-type DeliveryClientFormInputs = z.infer<typeof deliveryClientFormSchema>
-
 export function DeliveryClient() {
   const [fetchAddress, setFetchAddress] = useState<FetchAddress>({})
 
-  const {
-    control,
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    setValue,
-    formState: { isSubmitting, errors },
-  } = useForm<DeliveryClientFormInputs>({
-    resolver: zodResolver(deliveryClientFormSchema),
-  })
+  const { control, register, watch, setValue } = useFormContext()
 
   const cep = watch('cep')
 
@@ -74,7 +54,6 @@ export function DeliveryClient() {
   async function handleSearchCep(cep: string) {
     if (cep.length === 9) {
       const response = await axios.get(`https://viacep.com.br/ws/${cep}/json`)
-      console.log(response)
 
       setFetchAddress({
         street: response.data.logradouro,
@@ -86,33 +65,8 @@ export function DeliveryClient() {
     }
   }
 
-  async function handleCreateNewOrder(data: DeliveryClientFormInputs) {
-    const {
-      cep,
-      street,
-      number,
-      complement,
-      district,
-      city,
-      state,
-      paymentMethod,
-    } = data
-    console.log({
-      cep,
-      street,
-      number,
-      complement,
-      district,
-      city,
-      state,
-      paymentMethod,
-    })
-
-    reset()
-  }
-
   return (
-    <DeliveryClientContainer onSubmit={handleSubmit(handleCreateNewOrder)}>
+    <DeliveryClientContainer>
       <AddressContainer>
         <div>
           <h2>
@@ -121,7 +75,7 @@ export function DeliveryClient() {
           <span>Informe o endereço onde deseja receber o seu pedido</span>
         </div>
         <AddressData>
-          <input
+          <Input
             type="text"
             placeholder="CEP"
             className="cep"
@@ -136,42 +90,42 @@ export function DeliveryClient() {
             <MagnifyingGlass size={20} />
           </button>
 
-          <input
+          <Input
             type="text"
             placeholder="Rua"
             className="street"
             {...register('street', { required: true })}
           />
 
-          <input
+          <Input
             type="text"
             placeholder="Número"
             className="number"
             {...register('number', { required: true })}
           />
 
-          <input
+          <Input
             type="text"
             placeholder="Complemento"
             className="complement"
             {...register('complement')}
           />
 
-          <input
+          <Input
             type="text"
             placeholder="Bairro"
             className="district"
             {...register('district', { required: true })}
           />
 
-          <input
+          <Input
             type="text"
             placeholder="Cidade"
             className="city"
             {...register('city', { required: true })}
           />
 
-          <input
+          <Input
             type="text"
             placeholder="UF"
             className="state"

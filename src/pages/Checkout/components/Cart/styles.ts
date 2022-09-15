@@ -16,6 +16,7 @@ export const CartContainer = styled.div`
     text-transform: uppercase;
     font-weight: bold;
     height: 2.875rem;
+    cursor: pointer;
 
     &:hover {
       background: ${(props) => props.theme['yellow-dark']};

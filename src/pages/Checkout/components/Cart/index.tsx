@@ -94,7 +94,7 @@ export function Cart() {
           {priceFormatter.format(totalItems + deliveryTax().tax)}
         </span>
       </ResumeCart>
-      <button>Confirmar Pedido</button>
+      <button type="submit">Confirmar Pedido</button>
     </CartContainer>
   )
 }

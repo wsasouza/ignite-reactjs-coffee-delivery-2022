@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { createContext } from 'use-context-selector'
 
@@ -23,6 +24,7 @@ interface ProductContextType {
   addProduct: ({ productId, amount }: AddOrUpdateProductAmount) => Promise<void>
   removeProduct: (productId: number) => void
   updateProductAmount: ({ productId, amount }: AddOrUpdateProductAmount) => void
+  confirmedCheckoutOrder: () => void
 }
 
 interface ProductProviderProps {
@@ -31,10 +33,12 @@ interface ProductProviderProps {
 
 export const ProductsContext = createContext({} as ProductContextType)
 
+const COFFEE_CART_ITEMS = '@CoffeeDelivery:cart'
+
 export function ProductsProvider({ children }: ProductProviderProps) {
   const [products, setProducts] = useState<Product[]>([])
   const [cart, setCart] = useState<Product[]>(() => {
-    const storagedCart = localStorage.getItem('@CoffeeDelivery:cart')
+    const storagedCart = localStorage.getItem(COFFEE_CART_ITEMS)
 
     if (storagedCart) {
       return JSON.parse(storagedCart)
@@ -52,6 +56,10 @@ export function ProductsProvider({ children }: ProductProviderProps) {
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts])
+
+  useEffect(() => {
+    localStorage.setItem(COFFEE_CART_ITEMS, JSON.stringify(cart))
+  }, [cart])
 
   const addProduct = async ({
     productId,
@@ -88,7 +96,6 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       }
 
       setCart(updatedCart)
-      localStorage.setItem('@CoffeeDelivery:cart', JSON.stringify(updatedCart))
     } catch (err) {
       alert('Erro ao adicionar produto no carrinho')
       console.log(err)
@@ -105,10 +112,6 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       if (productIndex >= 0) {
         updatedCart.splice(productIndex, 1)
         setCart(updatedCart)
-        localStorage.setItem(
-          '@CoffeeDelivery:cart',
-          JSON.stringify(updatedCart),
-        )
       } else {
         throw Error()
       }
@@ -128,7 +131,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       }
 
       const stock = await api.get(`/stock/${productId}`)
-      const stockAmount = stock.data.amount
+      const stockAmount: number = stock.data.amount
 
       if (amount > stockAmount) {
         alert('Quantidade máxima atingida!')
@@ -143,10 +146,6 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       if (productExists) {
         productExists.amount = amount
         setCart(updatedCart)
-        localStorage.setItem(
-          '@CoffeeDelivery:cart',
-          JSON.stringify(updatedCart),
-        )
       } else {
         throw Error()
       }
@@ -156,9 +155,18 @@ export function ProductsProvider({ children }: ProductProviderProps) {
     }
   }
 
+  const confirmedCheckoutOrder = async () => {}
+
   return (
     <ProductsContext.Provider
-      value={{ products, cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        products,
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        confirmedCheckoutOrder,
+      }}
     >
       {children}
     </ProductsContext.Provider>

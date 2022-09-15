@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
-export const DeliveryClientContainer = styled.form`
+export const DeliveryClientContainer = styled.div`
   display: flex;
   max-width: 40rem;
   flex-direction: column;
@@ -116,25 +116,6 @@ export const AddressData = styled.div`
     grid-row: 4;
   }
 
-  input {
-    height: 2.625rem;
-    padding: 0.75rem;
-    font-size: 0.875rem;
-    border: none;
-    border-radius: 4px;
-    background: ${(props) => props.theme['base-input']};
-    color: ${(props) => props.theme['base-text']};
-  }
-
-  input::placeholder {
-    color: ${(props) => props.theme['base-label']};
-  }
-
-  input:focus {
-    outline: 0;
-    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
-  }
-
   @media (max-width: 580px) {
     .district {
       grid-column: 1/-1;
@@ -179,6 +160,25 @@ export const AddressData = styled.div`
       grid-column: 3;
       grid-row: 6;
     }
+  }
+`
+
+export const Input = styled.input`
+  height: 2.625rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 4px;
+  background: ${(props) => props.theme['base-input']};
+  color: ${(props) => props.theme['base-text']};
+
+  &::placeholder {
+    color: ${(props) => props.theme['base-label']};
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
   }
 `
 
@@ -241,7 +241,7 @@ export const PaymentMethodButton = styled(RadioGroup.Item)`
     border: 1px solid ${(props) => props.theme.purple};
   }
 
-  :focus {
+  &:focus {
     box-shadow: 0 0 0 1px ${(props) => props.theme.purple};
   }
 

@@ -34,7 +34,7 @@ export const ProductItemContainer = styled.div`
 export const ProductItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 
   & > span {
     color: ${(props) => props.theme['base-subtitle']};
