@@ -23,12 +23,21 @@ export function Header({ scroll }: HeaderProps) {
             <MapPin weight="fill" size={22} />
             Franca, SP
           </Locale>
-          <NavLink to="/checkout" title="Concluir Pedido">
-            <Cart>
-              {quantityItemsCart >= 1 && <span>{quantityItemsCart}</span>}
-              <ShoppingCart weight="fill" size={22} />
-            </Cart>
-          </NavLink>
+          {quantityItemsCart ? (
+            <NavLink to="/checkout" title="Concluir Pedido">
+              <Cart>
+                {quantityItemsCart >= 1 && <span>{quantityItemsCart}</span>}
+                <ShoppingCart weight="fill" size={22} />
+              </Cart>
+            </NavLink>
+          ) : (
+            <NavLink to="/" title="Adicione itens ao carrinho">
+              <Cart>
+                {quantityItemsCart >= 1 && <span>{quantityItemsCart}</span>}
+                <ShoppingCart weight="regular" size={22} />
+              </Cart>
+            </NavLink>
+          )}
         </GroupCart>
       </nav>
     </HeaderContainer>

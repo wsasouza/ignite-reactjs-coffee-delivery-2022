@@ -2,9 +2,11 @@ import { useContextSelector } from 'use-context-selector'
 
 import { ProductsContext } from '../../../../contexts/ProductsContext'
 import { priceFormatter } from '../../../../utils/formatter'
+import { useCart } from '../../../../hooks/useCart'
 import { CartItem } from '../CartItem'
 
 import { CartContainer, ItemsContainer, ResumeCart } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 interface UpdateProduct {
   id: number
@@ -15,6 +17,13 @@ const DELIVERY_TAX = 10
 const DELIVERY_TAX_FREE = 50
 
 export function Cart() {
+  const { quantityItemsCart } = useCart()
+  const navigate = useNavigate()
+
+  if (!quantityItemsCart) {
+    navigate('/')
+  }
+
   const cartItems = useContextSelector(ProductsContext, (context) => {
     return context.cart
   })
