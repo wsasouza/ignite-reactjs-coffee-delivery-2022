@@ -1,9 +1,36 @@
+import { useLocation } from 'react-router-dom'
 import { CurrencyDollar, IconContext, MapPin, Timer } from 'phosphor-react'
+
 import { DeliveryItem } from './components/DeliveryItem'
 import deliveryImg from '../../assets/img/Illustration.svg'
+
 import { DataDelivery, DataRequest, SuccessContainer } from './styles'
 
+type DeliverySuccess = {
+  street: string
+  number: string
+  district: string
+  city: string
+  state: string
+  paymentMethod: string
+}
+interface DeliveryLocale {
+  state: DeliverySuccess
+}
+
+const payment = [
+  { value: 'credit', name: 'Cartão de Crédito' },
+  { value: 'debit', name: 'Cartão de Débito' },
+  { value: 'money', name: 'Dinheiro' },
+]
+
 export function Success() {
+  const { state } = useLocation() as DeliveryLocale
+
+  const paymentMethodFormatted = payment.find(
+    (type) => type.value === state.paymentMethod,
+  )
+
   return (
     <SuccessContainer>
       <DataDelivery>
@@ -20,8 +47,9 @@ export function Success() {
             <DeliveryItem
               color="#8047f8"
               icon={<MapPin />}
-              text1={`Entrega em ${'Rua Dr. Francisco Maníglia'}, ${2265}`}
-              text2={`${'Jardim Petraglia'} - ${'Franca'}, ${'SP'}`}
+              text1={`Entrega em ${state.street}, ${state.number}`}
+              text2={`${state.district} - ${state.city}, ${state.state}`}
+              variant={true}
             />
             <DeliveryItem
               color="#dbac2c"
@@ -33,7 +61,7 @@ export function Success() {
               color="#c47f17"
               icon={<CurrencyDollar />}
               text1="Pagamento na entrega"
-              text2="Cartão de Crédito"
+              text2={`${paymentMethodFormatted?.name}`}
             />
           </IconContext.Provider>
         </DataRequest>

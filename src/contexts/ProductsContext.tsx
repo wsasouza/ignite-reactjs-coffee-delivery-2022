@@ -14,6 +14,17 @@ interface Product {
   amount: number
 }
 
+interface DeliveryClient {
+  cep: string
+  street: string
+  number: string
+  complement?: string
+  district: string
+  city: string
+  state: string
+  paymentMethod: string
+}
+
 interface AddOrUpdateProductAmount {
   productId: number
   amount: number
@@ -24,7 +35,7 @@ interface ProductContextType {
   addProduct: ({ productId, amount }: AddOrUpdateProductAmount) => Promise<void>
   removeProduct: (productId: number) => void
   updateProductAmount: ({ productId, amount }: AddOrUpdateProductAmount) => void
-  confirmedCheckoutOrder: () => void
+  confirmedCheckoutOrder: (data: DeliveryClient) => void
 }
 
 interface ProductProviderProps {
@@ -155,7 +166,40 @@ export function ProductsProvider({ children }: ProductProviderProps) {
     }
   }
 
-  const confirmedCheckoutOrder = async () => {}
+  const confirmedCheckoutOrder = async (data: DeliveryClient) => {
+    try {
+      const {
+        cep,
+        street,
+        number,
+        complement,
+        district,
+        city,
+        state,
+        paymentMethod,
+      } = data
+
+      const cartItems = cart
+
+      await api.post('orders', {
+        cep,
+        street,
+        number,
+        complement,
+        district,
+        city,
+        state,
+        paymentMethod,
+        cartItems,
+        createdAt: new Date(),
+      })
+
+      setCart([])
+    } catch (err) {
+      alert('Falha ao enviar o pedido')
+      console.log(err)
+    }
+  }
 
   return (
     <ProductsContext.Provider

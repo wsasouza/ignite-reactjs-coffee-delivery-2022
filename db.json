@@ -1,7 +1,8 @@
 {
   "stock": [
     {
-      "id": 1
+      "id": 1,
+      "amount": 25
     },
     {
       "id": 2,
@@ -208,5 +209,275 @@
       "price": 9.9
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "cep": "14409-102",
+      "street": "Rua Doutor Francisco Maníglia",
+      "number": "2265",
+      "complement": "",
+      "district": "Jardim Doutor Antônio Petráglia",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "debit",
+      "cartItems": [
+        {
+          "id": 7,
+          "image": "https://i.ibb.co/HHcVyMZ/coffee07.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Capuccino",
+          "subtitle": "Bebida com canela feita de doses iguais de café, leite e espuma",
+          "price": 5.9,
+          "amount": 7
+        },
+        {
+          "id": 8,
+          "image": "https://i.ibb.co/P5vyLh4/coffee08.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Macchiato",
+          "subtitle": "Café expresso misturado com um pouco de leite quente e espuma",
+          "price": 5.9,
+          "amount": 2
+        },
+        {
+          "id": 12,
+          "image": "https://i.ibb.co/WkBgM4t/coffee12.png",
+          "tags": [
+            "especial"
+          ],
+          "title": "Havaiano",
+          "subtitle": "Bebida adocicada preparada com café e leite de coco",
+          "price": 9.9,
+          "amount": 2
+        }
+      ],
+      "createdAt": "2022-09-16T12:48:41.606Z",
+      "id": 1
+    },
+    {
+      "cep": "14409-102",
+      "street": "Rua Doutor Francisco Maníglia",
+      "number": "2265",
+      "complement": "",
+      "district": "Jardim Doutor Antônio Petráglia",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "money",
+      "cartItems": [
+        {
+          "id": 1,
+          "image": "https://i.ibb.co/tbJj98t/coffee01.png",
+          "tags": [
+            "tradicional"
+          ],
+          "title": "Expresso Tradicional",
+          "subtitle": "O tradicional café feito com água quente e grãos moídos",
+          "price": 4.9,
+          "amount": 4
+        },
+        {
+          "id": 2,
+          "image": "https://i.ibb.co/vVc5tsp/coffee02.png",
+          "tags": [
+            "tradicional"
+          ],
+          "title": "Expresso Americano",
+          "subtitle": "Expresso diluído, menos intenso que o tradicional",
+          "price": 4.9,
+          "amount": 3
+        },
+        {
+          "id": 3,
+          "image": "https://i.ibb.co/mRNxmJ5/coffee03.png",
+          "tags": [
+            "tradicional"
+          ],
+          "title": "Expresso Cremoso",
+          "subtitle": "Café expresso tradicional com espuma cremosa",
+          "price": 4.9,
+          "amount": 1
+        },
+        {
+          "id": 7,
+          "image": "https://i.ibb.co/HHcVyMZ/coffee07.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Capuccino",
+          "subtitle": "Bebida com canela feita de doses iguais de café, leite e espuma",
+          "price": 5.9,
+          "amount": 1
+        },
+        {
+          "id": 8,
+          "image": "https://i.ibb.co/P5vyLh4/coffee08.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Macchiato",
+          "subtitle": "Café expresso misturado com um pouco de leite quente e espuma",
+          "price": 5.9,
+          "amount": 2
+        },
+        {
+          "id": 10,
+          "image": "https://i.ibb.co/B30jg8V/coffee10.png",
+          "tags": [
+            "especial",
+            "com leite"
+          ],
+          "title": "Chocolate Quente",
+          "subtitle": "Bebida feita com chocolate dissolvido no leite quente e café",
+          "price": 7.9,
+          "amount": 1
+        },
+        {
+          "id": 12,
+          "image": "https://i.ibb.co/WkBgM4t/coffee12.png",
+          "tags": [
+            "especial"
+          ],
+          "title": "Havaiano",
+          "subtitle": "Bebida adocicada preparada com café e leite de coco",
+          "price": 9.9,
+          "amount": 1
+        }
+      ],
+      "createdAt": "2022-09-16T12:53:27.664Z",
+      "id": 2
+    },
+    {
+      "cep": "14409-102",
+      "street": "Rua Doutor Francisco Maníglia",
+      "number": "2265",
+      "complement": "",
+      "district": "Jardim Doutor Antônio Petráglia",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "debit",
+      "cartItems": [
+        {
+          "id": 12,
+          "image": "https://i.ibb.co/WkBgM4t/coffee12.png",
+          "tags": [
+            "especial"
+          ],
+          "title": "Havaiano",
+          "subtitle": "Bebida adocicada preparada com café e leite de coco",
+          "price": 9.9,
+          "amount": 2
+        }
+      ],
+      "createdAt": "2022-09-16T12:56:09.503Z",
+      "id": 3
+    },
+    {
+      "cep": "14409-102",
+      "street": "Rua Doutor Francisco Maníglia",
+      "number": "2265",
+      "complement": "",
+      "district": "Jardim Doutor Antônio Petráglia",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "money",
+      "cartItems": [
+        {
+          "id": 11,
+          "image": "https://i.ibb.co/r2x1M71/coffee11.png",
+          "tags": [
+            "especial",
+            "alcoólico",
+            "gelado"
+          ],
+          "title": "Cubano",
+          "subtitle": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+          "price": 9.9,
+          "amount": 1
+        }
+      ],
+      "createdAt": "2022-09-16T13:38:48.057Z",
+      "id": 4
+    },
+    {
+      "cep": "14400-710",
+      "street": "Rua Campos Salles",
+      "number": "1951",
+      "complement": "Loja Infocell",
+      "district": "Centro",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "money",
+      "cartItems": [
+        {
+          "id": 2,
+          "image": "https://i.ibb.co/vVc5tsp/coffee02.png",
+          "tags": [
+            "tradicional"
+          ],
+          "title": "Expresso Americano",
+          "subtitle": "Expresso diluído, menos intenso que o tradicional",
+          "price": 4.9,
+          "amount": 4
+        },
+        {
+          "id": 3,
+          "image": "https://i.ibb.co/mRNxmJ5/coffee03.png",
+          "tags": [
+            "tradicional"
+          ],
+          "title": "Expresso Cremoso",
+          "subtitle": "Café expresso tradicional com espuma cremosa",
+          "price": 4.9,
+          "amount": 3
+        }
+      ],
+      "createdAt": "2022-09-16T13:51:20.026Z",
+      "id": 5
+    },
+    {
+      "cep": "14409-132",
+      "street": "Rua Manuel de Freitas",
+      "number": "1400",
+      "complement": "de 1000/1001 ao fim",
+      "district": "Jardim Doutor Antônio Petráglia",
+      "city": "Franca",
+      "state": "SP",
+      "paymentMethod": "credit",
+      "cartItems": [
+        {
+          "id": 6,
+          "image": "https://i.ibb.co/KDNWHCv/coffee06.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Latte",
+          "subtitle": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+          "price": 5.9,
+          "amount": 1
+        },
+        {
+          "id": 7,
+          "image": "https://i.ibb.co/HHcVyMZ/coffee07.png",
+          "tags": [
+            "tradicional",
+            "com leite"
+          ],
+          "title": "Capuccino",
+          "subtitle": "Bebida com canela feita de doses iguais de café, leite e espuma",
+          "price": 5.9,
+          "amount": 2
+        }
+      ],
+      "createdAt": "2022-09-16T14:07:28.482Z",
+      "id": 6
+    }
+  ]
 }

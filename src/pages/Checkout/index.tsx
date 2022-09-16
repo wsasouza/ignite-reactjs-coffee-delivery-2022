@@ -1,4 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -31,6 +32,8 @@ export function Checkout() {
     return context.confirmedCheckoutOrder
   })
 
+  const navigate = useNavigate()
+
   const handleCreateNewOrder = async (data: DeliveryClientFormInputs) => {
     const {
       cep,
@@ -42,7 +45,8 @@ export function Checkout() {
       state,
       paymentMethod,
     } = data
-    console.log({
+
+    const deliveryClient = {
       cep,
       street,
       number,
@@ -51,9 +55,13 @@ export function Checkout() {
       city,
       state,
       paymentMethod,
-    })
+    }
 
-    checkout()
+    checkout(deliveryClient)
+
+    navigate('/success', {
+      state: deliveryClient,
+    })
 
     methods.reset()
   }
