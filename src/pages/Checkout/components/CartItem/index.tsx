@@ -45,17 +45,18 @@ export function CartItem(data: CartItemProps) {
           <ProductItemAction>
             <QuantityItemAction>
               <button
+                type="button"
                 onClick={() => data.decrement(product)}
                 disabled={data.amount <= 1}
               >
                 <Minus size={14} />
               </button>
               <span>{data.amount}</span>
-              <button onClick={() => data.increment(product)}>
+              <button type="button" onClick={() => data.increment(product)}>
                 <Plus size={14} />
               </button>
             </QuantityItemAction>
-            <button onClick={() => data.remove(data.id)}>
+            <button type="button" onClick={() => data.remove(data.id)}>
               <Trash size={16} />
               Remover
             </button>
