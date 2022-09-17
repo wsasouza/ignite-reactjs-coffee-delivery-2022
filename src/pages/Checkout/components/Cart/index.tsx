@@ -1,4 +1,5 @@
 import { useContextSelector } from 'use-context-selector'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import { ProductsContext } from '../../../../contexts/ProductsContext'
 import { priceFormatter } from '../../../../utils/formatter'
@@ -7,6 +8,7 @@ import { CartItem } from '../CartItem'
 
 import { CartContainer, ItemsContainer, ResumeCart } from './styles'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 interface UpdateProduct {
   id: number
@@ -17,6 +19,8 @@ const DELIVERY_TAX = 10
 const DELIVERY_TAX_FREE = 50
 
 export function Cart() {
+  const [parent] = useAutoAnimate()
+
   const { quantityItemsCart } = useCart()
   const navigate = useNavigate()
 
@@ -76,7 +80,7 @@ export function Cart() {
 
   return (
     <CartContainer>
-      <ItemsContainer>
+      <ItemsContainer ref={parent as React.RefObject<HTMLDivElement>}>
         {cartFormatted.map((item) => {
           return (
             <CartItem

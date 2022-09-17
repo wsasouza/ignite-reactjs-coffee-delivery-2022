@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { createContext } from 'use-context-selector'
+import { toast } from 'react-toastify'
 
 import { api } from '../lib/axios'
 
@@ -89,12 +90,13 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       const amountCart = currentAmount + amount
 
       if (amountCart > stockAmount) {
-        alert('Não temos disponibilidade desse item no momento.')
+        toast.warning('Infelizmente esse item está esgotado no momento')
         return
       }
 
       if (productExists) {
         productExists.amount = amountCart
+        toast.info('Atualizado a quantidade deste item no carrinho')
       } else {
         const product = await api.get(`/products/${productId}`)
 
@@ -104,11 +106,12 @@ export function ProductsProvider({ children }: ProductProviderProps) {
         }
 
         updatedCart.push(newProduct)
+        toast.success(`Item ${product.data.title} adicionado ao carrinho`)
       }
 
       setCart(updatedCart)
     } catch (err) {
-      alert('Erro ao adicionar produto no carrinho')
+      toast.error('Erro ao adicionar o produto no carrinho')
       console.log(err)
     }
   }
@@ -123,11 +126,12 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       if (productIndex >= 0) {
         updatedCart.splice(productIndex, 1)
         setCart(updatedCart)
+        toast.info('Produto removido do carrinho com sucesso')
       } else {
         throw Error()
       }
     } catch (err) {
-      alert('Erro ao remover o produto do carrinho')
+      toast.error('Erro ao remover o produto do carrinho')
       console.log(err)
     }
   }
@@ -145,7 +149,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       const stockAmount: number = stock.data.amount
 
       if (amount > stockAmount) {
-        alert('Quantidade máxima atingida!')
+        toast.warning('Quantidade máxima disponível no momento')
         return
       }
 
@@ -161,7 +165,7 @@ export function ProductsProvider({ children }: ProductProviderProps) {
         throw Error()
       }
     } catch (err) {
-      alert('Erro ao atualizar produto no carrinho')
+      toast.error('Erro ao atualizar produto no carrinho')
       console.log(err)
     }
   }
@@ -195,8 +199,9 @@ export function ProductsProvider({ children }: ProductProviderProps) {
       })
 
       setCart([])
+      toast.success('Pedido realizado com sucesso')
     } catch (err) {
-      alert('Falha ao enviar o pedido')
+      toast.error('Falha ao processar o pedido')
       console.log(err)
     }
   }
