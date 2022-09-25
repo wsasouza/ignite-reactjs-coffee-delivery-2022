@@ -17,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
     --toastify-text-color-dark: #c47f17;
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   * {
     margin: 0;
     padding: 0;    
