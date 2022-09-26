@@ -14,17 +14,13 @@
 <h1 align="center">Coffee Delivery</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/wsasouza/ignite-reactjs-coffee-delivery-2022
-?color=8047f8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/wsasouza/ignite-reactjs-coffee-delivery-2022?color=8047f8">
 
-<img alt="Github language count" src="https://img.shields.io/github/languages/count/wsasouza/ignite-reactjs-coffee-delivery-2022
-?color=8047f8">
+<img alt="Github language count" src="https://img.shields.io/github/languages/count/wsasouza/ignite-reactjs-coffee-delivery-2022?color=8047f8">
 
-<img alt="Repository size" src="https://img.shields.io/github/repo-size/wsasouza/ignite-reactjs-coffee-delivery-2022
-?color=8047f8">
+<img alt="Repository size" src="https://img.shields.io/github/repo-size/wsasouza/ignite-reactjs-coffee-delivery-2022?color=8047f8">
 
-<img alt="Last Commit" src="https://img.shields.io/github/last-commit/wsasouza/ignite-reactjs-coffee-delivery-2022
-?color=8047f8">
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/wsasouza/ignite-reactjs-coffee-delivery-2022?color=8047f8">
 
 </p>
 
